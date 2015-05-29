@@ -29,11 +29,13 @@ var calculatorModule = function(){
    * @return { Number }    current total
    */
    function _load(memory){
-
-    memory
-    total = memory;
-    return total;
-
+    if(typeof memory != 'number'){
+      return "need a number";
+    }else{
+      memory
+      total = memory;
+      return total;
+    }
   }
 
   /**
@@ -49,7 +51,11 @@ var calculatorModule = function(){
    * @param { Number } x
    */
    function _add(memory){
-    total += memory;
+    if(typeof memory != 'number'){
+      return "need a number";
+    }else{
+      total += memory;
+    }
    }
 
   /**
@@ -57,7 +63,11 @@ var calculatorModule = function(){
    * @param  { Number } x
    */
    function _subtract(memory){
-    total -= memory;
+    if(typeof memory != 'number'){
+      return "need a number";
+    }else{
+      total -= memory;
+    }
    }
 
   /**
@@ -65,7 +75,11 @@ var calculatorModule = function(){
    * @param  { Number } x
    */
    function _multiply(memory){
-    total *= memory;
+    if(typeof memory != 'number'){
+      return "need a number";
+    }else{
+      total *= memory;
+    }
    };
 
   /**
@@ -73,7 +87,11 @@ var calculatorModule = function(){
    * @param  { Number } x
    */
    function _divide(memory){
-    total /= memory;
+    if(typeof memory != 'number'){
+      return "need a number";
+    }else{
+      total /= memory;
+    }
    };
 
 
