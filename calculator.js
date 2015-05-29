@@ -11,12 +11,12 @@ var calculatorModule = function(){
     var total = 0;
 
     return {
-      load : _load,
+      load : _validate(_load),
       getTotal : _getTotal,
-      add : _add,
-      subtract : _subtract,
-      multiply : _multiply,
-      divide : _divide,
+      add : _validate(_add),
+      subtract : _validate(_subtract),
+      multiply : _validate(_multiply),
+      divide : _validate(_divide),
       recallMemory : _recallMemory,
       saveMemory : _saveMemory,
       clearMemory : _clearMemory
@@ -29,13 +29,9 @@ var calculatorModule = function(){
    * @return { Number }    current total
    */
    function _load(memory){
-    if(typeof memory != 'number'){
-      return "need a number";
-    }else{
-      memory
-      total = memory;
-      return total;
-    }
+    total = memory;
+    return total;
+
   }
 
   /**
@@ -51,11 +47,7 @@ var calculatorModule = function(){
    * @param { Number } x
    */
    function _add(memory){
-    if(typeof memory != 'number'){
-      return "need a number";
-    }else{
-      total += memory;
-    }
+    total += memory;
    }
 
   /**
@@ -63,11 +55,7 @@ var calculatorModule = function(){
    * @param  { Number } x
    */
    function _subtract(memory){
-    if(typeof memory != 'number'){
-      return "need a number";
-    }else{
-      total -= memory;
-    }
+    total -= memory;
    }
 
   /**
@@ -75,11 +63,7 @@ var calculatorModule = function(){
    * @param  { Number } x
    */
    function _multiply(memory){
-    if(typeof memory != 'number'){
-      return "need a number";
-    }else{
-      total *= memory;
-    }
+    total *= memory;
    };
 
   /**
@@ -87,11 +71,7 @@ var calculatorModule = function(){
    * @param  { Number } x
    */
    function _divide(memory){
-    if(typeof memory != 'number'){
-      return "need a number";
-    }else{
-      total /= memory;
-    }
+    total /= memory;
    };
 
 
@@ -120,5 +100,14 @@ var calculatorModule = function(){
   /**
    * Validation
    */
+   function _validate(calculatorModule){
+    return function(memory){
+      if (typeof memory != 'number'){
+        return "Error! I need to be a number";
+      }else{
+        return calculatorModule(memory);
+      }
+    }
+   }
 
 };
