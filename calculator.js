@@ -112,3 +112,41 @@ var calculatorModule = (function(){
 
 })();
 
+/*
+//constantine
+var o1 = document.getElementById('operator1');//done
+var o2 = document.getElementById('operator2');//done
+
+var calculate = function(a, b, method3){
+  calculatorModule.load(a);
+  method3(b);
+  return calculatorModule.getTotal();
+};
+
+var method2;
+console.log(document.getElementById('operation').value);
+
+document.getElementById('calculate').addEventListener('click', function(){
+          switch(document.getElementById('operation').value){
+          case 'add' : method2 = calculatorModule.add;
+            break;
+          case 'subtract' : method2 = calculatorModule.subtract;
+            break;
+          case 'multiply' : method2 = calculatorModule.multiply;
+            break;
+          case 'divide' : method2 = calculatorModule.divide;
+            break;
+        };
+
+  var result = calculate(Number(o1.value), Number(o2.value),method2);
+  document.getElementById('result').innerHTML(result);
+  console.log("jhgkhg");
+});
+
+/*
+/*
+//Judah Code
+
+
+
+*/
