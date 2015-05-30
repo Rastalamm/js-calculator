@@ -5,11 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+
+  </style>
+
+
   </head>
   <body>
     <div id="container">
+      <div class ="number_input" id="input1">Number: <input type="number"></div>
+      <div class ="number_input" id="input2">Number: <input type="number"></div>
+      <div>What to do..
+        <select id="mathType">
+          <option value="add">+</option>
+          <option value="subtract">-</option>
+          <option value="multiply">*</option>
+          <option value="divide">/</option>
+        </select>
+      </div>
+      <button id="calculate">Make it so</button>
+      <div style="">
+        <h2>Mathy</h2>
+        <div id="result" style="width: 130px; height: 20px; border: 1px solid black;" </div>
+      </div>
 
     </div>
     <script src="/calculator.js" type="text/javascript"></script>
+
   </body>
 </html>
+
+

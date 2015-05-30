@@ -6,7 +6,7 @@
  * @return {object} `calculator` object that can be used
  */
 
-var calculatorModule = function(){
+var calculatorModule = (function(){
     var memory = 0;
     var total = 0;
 
@@ -20,7 +20,7 @@ var calculatorModule = function(){
       recallMemory : _recallMemory,
       saveMemory : _saveMemory,
       clearMemory : _clearMemory
-    }
+    };
 
 
   /**
@@ -64,7 +64,7 @@ var calculatorModule = function(){
    */
    function _multiply(memory){
     total *= memory;
-   };
+   }
 
   /**
    * Divides the value passing in by `total`
@@ -72,7 +72,7 @@ var calculatorModule = function(){
    */
    function _divide(memory){
     total /= memory;
-   };
+   }
 
 
   /**
@@ -107,7 +107,8 @@ var calculatorModule = function(){
       }else{
         return calculatorModule(memory);
       }
-    }
+    };
    }
 
-};
+})();
+
